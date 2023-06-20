@@ -16,8 +16,8 @@ class Utils
             return "Rainy"
         case "Fast Wind":
             return "FastWind"
-        case "Mostly Clear":
-            return "Showers"
+        case "Showers":
+            return "AngledRain"
         case "Tornado":
             return "Tornado"
         default:
