@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Forecast: Hashable, Decodable, Identifiable {
+struct Forecast: Decodable, Identifiable {
     var id: Int
     var temperature: Int
     var high: Int
