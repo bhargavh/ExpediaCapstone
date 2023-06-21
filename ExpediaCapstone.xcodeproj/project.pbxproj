@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		CA9F28E62A41CFE400B2D1CE /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F28E52A41CFE400B2D1CE /* HouseView.swift */; };
 		CA9F28F32A41E27F00B2D1CE /* WeatherCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F28F22A41E27F00B2D1CE /* WeatherCard.swift */; };
-		CA9F28F82A41F03700B2D1CE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F28F72A41F03700B2D1CE /* Utils.swift */; };
 		CA9F28FA2A4213DF00B2D1CE /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F28F92A4213DF00B2D1CE /* Forecast.swift */; };
 		CA9F28FD2A42171E00B2D1CE /* forecastData.json in Resources */ = {isa = PBXBuildFile; fileRef = CA9F28FC2A42171E00B2D1CE /* forecastData.json */; };
-		CA9F28FF2A42198C00B2D1CE /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F28FE2A42198C00B2D1CE /* ForecastViewModel.swift */; };
+		CA9F28FF2A42198C00B2D1CE /* ForecastsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F28FE2A42198C00B2D1CE /* ForecastsViewModel.swift */; };
 		CA9F29012A421A6400B2D1CE /* WeatherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F29002A421A6400B2D1CE /* WeatherList.swift */; };
 		CA9F29092A4288E400B2D1CE /* ExpediaCapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F29082A4288E400B2D1CE /* ExpediaCapstoneTests.swift */; };
+		CA9F29102A42D34D00B2D1CE /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F290F2A42D34D00B2D1CE /* WeatherViewModel.swift */; };
 		CAC22C682A41C98400CAF717 /* ExpediaCapstoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC22C672A41C98400CAF717 /* ExpediaCapstoneApp.swift */; };
 		CAC22C6A2A41C98400CAF717 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC22C692A41C98400CAF717 /* ContentView.swift */; };
 		CAC22C6C2A41C98500CAF717 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC22C6B2A41C98500CAF717 /* Assets.xcassets */; };
@@ -34,13 +34,13 @@
 /* Begin PBXFileReference section */
 		CA9F28E52A41CFE400B2D1CE /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
 		CA9F28F22A41E27F00B2D1CE /* WeatherCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCard.swift; sourceTree = "<group>"; };
-		CA9F28F72A41F03700B2D1CE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		CA9F28F92A4213DF00B2D1CE /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		CA9F28FC2A42171E00B2D1CE /* forecastData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = forecastData.json; sourceTree = "<group>"; };
-		CA9F28FE2A42198C00B2D1CE /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
+		CA9F28FE2A42198C00B2D1CE /* ForecastsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastsViewModel.swift; sourceTree = "<group>"; };
 		CA9F29002A421A6400B2D1CE /* WeatherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherList.swift; sourceTree = "<group>"; };
 		CA9F29062A4288E400B2D1CE /* ExpediaCapstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpediaCapstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9F29082A4288E400B2D1CE /* ExpediaCapstoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpediaCapstoneTests.swift; sourceTree = "<group>"; };
+		CA9F290F2A42D34D00B2D1CE /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		CAC22C642A41C98400CAF717 /* ExpediaCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpediaCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC22C672A41C98400CAF717 /* ExpediaCapstoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpediaCapstoneApp.swift; sourceTree = "<group>"; };
 		CAC22C692A41C98400CAF717 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,17 +88,10 @@
 		CA9F28EF2A41DF3700B2D1CE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CA9F28FE2A42198C00B2D1CE /* ForecastViewModel.swift */,
+				CA9F28FE2A42198C00B2D1CE /* ForecastsViewModel.swift */,
+				CA9F290F2A42D34D00B2D1CE /* WeatherViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		CA9F28F62A41F01A00B2D1CE /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				CA9F28F72A41F03700B2D1CE /* Utils.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		CA9F28FB2A42147500B2D1CE /* Resources */ = {
@@ -139,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				CA9F28FB2A42147500B2D1CE /* Resources */,
-				CA9F28F62A41F01A00B2D1CE /* Utils */,
 				CA9F28EE2A41DF2A00B2D1CE /* Model */,
 				CA9F28EF2A41DF3700B2D1CE /* ViewModel */,
 				CA9F28E72A41D74700B2D1CE /* Views */,
@@ -268,12 +260,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA9F29012A421A6400B2D1CE /* WeatherList.swift in Sources */,
-				CA9F28F82A41F03700B2D1CE /* Utils.swift in Sources */,
 				CA9F28E62A41CFE400B2D1CE /* HouseView.swift in Sources */,
 				CAC22C6A2A41C98400CAF717 /* ContentView.swift in Sources */,
-				CA9F28FF2A42198C00B2D1CE /* ForecastViewModel.swift in Sources */,
+				CA9F28FF2A42198C00B2D1CE /* ForecastsViewModel.swift in Sources */,
 				CA9F28F32A41E27F00B2D1CE /* WeatherCard.swift in Sources */,
 				CA9F28FA2A4213DF00B2D1CE /* Forecast.swift in Sources */,
+				CA9F29102A42D34D00B2D1CE /* WeatherViewModel.swift in Sources */,
 				CAC22C682A41C98400CAF717 /* ExpediaCapstoneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

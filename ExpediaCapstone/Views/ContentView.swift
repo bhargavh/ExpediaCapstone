@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var forecastViewModel: ForecastViewModel
+    @ObservedObject var forecastsViewModel: ForecastsViewModel
     
     var body: some View {
-        WeatherList(forecastViewModel: forecastViewModel).preferredColorScheme(.dark)
+        WeatherList(forecastsViewModel: forecastsViewModel).preferredColorScheme(.dark)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    @ObservedObject static var forecastViewModel: ForecastViewModel = ForecastViewModel()
+    @ObservedObject static var forecastsViewModel: ForecastsViewModel = ForecastsViewModel()
     static var previews: some View {
-        ContentView(forecastViewModel: forecastViewModel)
+        ContentView(forecastsViewModel: forecastsViewModel)
     }
 }

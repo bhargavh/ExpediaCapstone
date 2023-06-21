@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WeatherCard: View {
-    var forecast: Forecast
+    var weatherViewModel: WeatherViewModel
     
     var body: some View {
         HStack {
@@ -17,18 +17,18 @@ struct WeatherCard: View {
                 
                 HStack{
                     VStack(alignment : .leading){
-                        Text("\(forecast.temperature)°").font(.system(size: 72, weight: .regular, design: .default))
+                        Text("\(weatherViewModel.temperature)°").font(.system(size: 72, weight: .regular, design: .default))
                             .foregroundColor(.white)
-                        Text("H:\(forecast.high)° L:\(forecast.low)°").foregroundColor(.white)
+                        Text("H:\(weatherViewModel.high)° L:\(weatherViewModel.low)°").foregroundColor(.white)
                             .opacity(0.50)
                             .padding(.bottom , 1)
                         
-                        Text("\(forecast.city), \(forecast.country)")
+                        Text("\(weatherViewModel.city), \(weatherViewModel.country)")
                             .foregroundColor(.white)
                     }.padding(.horizontal , 15)
                     VStack(alignment: .trailing , spacing: 0){
-                        Image(Utils.getWeatherImage(weatherCondition: forecast.weatherCondition))
-                        Text(forecast.weatherCondition)
+                        Image(weatherViewModel.getWeatherImage())
+                        Text(weatherViewModel.weatherCondition)
                             .foregroundColor(.white)
                             .font(.subheadline)
                             .padding(.trailing , 20)
@@ -51,9 +51,10 @@ struct WeatherCard_Previews: PreviewProvider {
         let high = 28
         let weatherCondition = "Showers"
         let forecast = Forecast(id: 1, temperature: temperature, high: high, low: low, city: city, country: country, weatherCondition: weatherCondition)
+        let weatherViewModel = WeatherViewModel(forecast: forecast)
         VStack(spacing:0){
-            WeatherCard(forecast: forecast)
-            WeatherCard(forecast: forecast)
+            WeatherCard(weatherViewModel: weatherViewModel)
+            WeatherCard(weatherViewModel: weatherViewModel)
         }
         
     }

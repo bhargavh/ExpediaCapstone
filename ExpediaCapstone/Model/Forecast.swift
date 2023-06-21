@@ -8,11 +8,11 @@
 import Foundation
 
 struct Forecast: Decodable, Identifiable {
-    var id: Int
-    var temperature: Int
-    var high: Int
-    var low: Int
-    var city: String
-    var country: String
-    var weatherCondition: String
+    let id: Int
+    let temperature: Int
+    let high: Int
+    let low: Int
+    let city: String
+    let country: String
+    let weatherCondition: String
 }

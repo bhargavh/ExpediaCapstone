@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HouseView: View {
-    var forecast: Forecast
+    var weatherViewModel: WeatherViewModel
     
     var body: some View {
         ZStack(alignment: .top){
@@ -17,21 +17,21 @@ struct HouseView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack{
-                Text(forecast.city)
+                Text(weatherViewModel.city)
                     .font(.system(size: 34, weight: .regular, design: .default))
                     .foregroundColor(.white)
                     
-                Text("\(forecast.temperature)°")
+                Text("\(weatherViewModel.temperature)°")
                     .font(.system(size: 96, weight: .thin, design: .default))
                     .foregroundColor(.white)
                 
-                Text(forecast.weatherCondition)
+                Text(weatherViewModel.weatherCondition)
                     .foregroundColor(.white)
                     .font(.title3)
                     .bold()
                     .opacity(0.50)
                 
-                Text("H:\(forecast.high)° L:\(forecast.low)°")
+                Text("H:\(weatherViewModel.high)° L:\(weatherViewModel.low)°")
                     .foregroundColor(.white)
                     .font(.title3)
                     .bold()
@@ -53,6 +53,7 @@ struct HouseView_Previews: PreviewProvider {
         let high = 28
         let weatherCondition = "Showers"
         let forecast = Forecast(id: 1, temperature: temperature, high: high, low: low, city: city, country: country, weatherCondition: weatherCondition)
-        HouseView(forecast: forecast)
+        let weatherViewModel = WeatherViewModel(forecast: forecast)
+        HouseView(weatherViewModel: weatherViewModel)
     }
 }

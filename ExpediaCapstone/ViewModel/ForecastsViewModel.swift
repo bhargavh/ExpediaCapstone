@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class ForecastViewModel: ObservableObject {
+final class ForecastsViewModel: ObservableObject {
     @Published var forecasts: [Forecast] = load("forecastData.json")
     
     func search(_ query: String) -> [Forecast] {
