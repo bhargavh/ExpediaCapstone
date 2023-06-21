@@ -19,19 +19,29 @@ class ForecastViewModelTests: XCTestCase {
         viewModel = nil
     }
     
-    func testSearch() {
+    func testPartialSearch(){
         // Test searching by city
-        let cityResults = viewModel.search("Mumbai")
+        let cityResults = viewModel.search("Mumb")
         XCTAssertEqual(cityResults.count, 1)
         XCTAssertEqual(cityResults.first?.city, "Mumbai")
-        
+    }
+    
+    func testEmptySearch(){
+        // Test searching with empty query
+        let emptyResults = viewModel.search("")
+        XCTAssertEqual(emptyResults.count, viewModel.forecasts.count)
+    }
+    
+    func testSearch() {
         // Test searching by country
         let countryResults = viewModel.search("India")
         XCTAssertEqual(countryResults.count, 2)
         XCTAssertTrue(countryResults.contains(where: { $0.country == "India" }))
-        
-        // Test searching with empty query
-        let emptyResults = viewModel.search("")
-        XCTAssertEqual(emptyResults.count, viewModel.forecasts.count)
+    }
+    func testRefresh(){
+        viewModel.forecasts = []
+        XCTAssertEqual(viewModel.forecasts.count, 0)
+        viewModel.refresh()
+        XCTAssertNotEqual(viewModel.forecasts.count, 0)
     }
 }
