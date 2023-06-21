@@ -20,6 +20,10 @@ final class ForecastViewModel: ObservableObject {
             return false
         }
     }
+    
+    func refresh() {
+        forecasts = load("forecastData.json")
+    }
 }
 
 
