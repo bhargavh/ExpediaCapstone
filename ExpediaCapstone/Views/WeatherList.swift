@@ -50,13 +50,25 @@ struct WeatherList: View {
                     
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        //isEditing.toggle()
-                        editMode = (editMode == .inactive) ? .active : .inactive
-                    }, label: {
-                        Image(systemName: "ellipsis.circle")
-                            .foregroundColor(.white)
-                    })
+                    HStack {
+                        if editMode == .active{
+                            Button(action:{
+                                withAnimation{
+                                    forecastViewModel.refresh()
+                                }
+                            }, label:{
+                                Image(systemName: "arrow.clockwise.circle")
+                            }).foregroundColor(.white)
+                        }
+                        
+                        Button(action: {
+                            //isEditing.toggle()
+                            editMode = (editMode == .inactive) ? .active : .inactive
+                        }, label: {
+                            Image(systemName: "ellipsis.circle")
+                                .foregroundColor(.white)
+                        })
+                    }
                 }
             }
         }
