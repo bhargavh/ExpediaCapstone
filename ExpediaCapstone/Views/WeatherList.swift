@@ -11,7 +11,6 @@ struct WeatherList: View {
     @ObservedObject var forecastsViewModel: ForecastsViewModel
     @State private var searchText = ""
     @State var editMode: EditMode = .inactive
-    @State var selection = Set<Int>()
     @State private var delDisabled: Bool = false
     //@State var isEditing = false
     
@@ -22,7 +21,7 @@ struct WeatherList: View {
     var body: some View {
         
         NavigationStack {
-            List(selection: $selection) {
+            List(selection: $forecastsViewModel.selection) {
                 ForEach(searchResults) { forecast in
                     NavigationLink(
                         destination: HouseView(weatherViewModel: WeatherViewModel(forecast : forecast))
@@ -38,7 +37,13 @@ struct WeatherList: View {
                         .listRowBackground(Color.clear)
                     
                 }
-                .onDelete(perform: deleteForecasts)
+                .onDelete(perform: {
+                    (offset) in
+                    withAnimation {
+                        forecastsViewModel.deleteSingle(offset)
+                        editMode = .inactive
+                    }
+                })
                 .deleteDisabled(delDisabled)
                 
             }
@@ -65,7 +70,7 @@ struct WeatherList: View {
                         Menu {
                             Button("Delete"){
                                 withAnimation{
-                                    deleteForecasts()
+                                    forecastsViewModel.deleteMultiple()
                                     editMode = .inactive
                                     delDisabled = false
                                 }
@@ -92,25 +97,8 @@ struct WeatherList: View {
         }
         .searchable(text: $searchText , prompt: "search for a city or country")
         
-        
-        
-        
     }
-    private func deleteForecasts() {
-        for id in selection {
-            if let index = forecastsViewModel.forecasts.lastIndex(where: { $0.id == id }) {
-                forecastsViewModel.forecasts.remove(at: index)
-            }
-        }
-        selection = Set<Int>()
-    }
-    
-    private func deleteForecasts(offsets: IndexSet) {
-        withAnimation {
-            forecastsViewModel.forecasts.remove(atOffsets: offsets)
-            editMode = .inactive
-        }
-    }
+
 }
 
 struct BackgroundView : View {

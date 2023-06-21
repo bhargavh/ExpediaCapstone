@@ -10,6 +10,7 @@ import Combine
 
 final class ForecastsViewModel: ObservableObject {
     @Published var forecasts: [Forecast] = load("forecastData.json")
+    @Published var selection = Set<Int>()
     
     func search(_ query: String) -> [Forecast] {
         let lquery = query.lowercased()
@@ -19,6 +20,19 @@ final class ForecastsViewModel: ObservableObject {
             }
             return false
         }
+    }
+    
+    func deleteSingle(_ offset: IndexSet){
+        forecasts.remove(atOffsets: offset)
+    }
+    
+    func deleteMultiple() {
+        for id in selection {
+            if let index = forecasts.lastIndex(where: { $0.id == id }) {
+                forecasts.remove(at: index)
+            }
+        }
+        selection = Set<Int>()
     }
     
     func refresh() {
