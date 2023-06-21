@@ -7,13 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA9F28E62A41CFE400B2D1CE /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F28E52A41CFE400B2D1CE /* HouseView.swift */; };
+		CA9F28F32A41E27F00B2D1CE /* WeatherCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F28F22A41E27F00B2D1CE /* WeatherCard.swift */; };
+		CA9F28F82A41F03700B2D1CE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F28F72A41F03700B2D1CE /* Utils.swift */; };
+		CA9F28FA2A4213DF00B2D1CE /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F28F92A4213DF00B2D1CE /* Forecast.swift */; };
+		CA9F28FD2A42171E00B2D1CE /* forecastData.json in Resources */ = {isa = PBXBuildFile; fileRef = CA9F28FC2A42171E00B2D1CE /* forecastData.json */; };
+		CA9F28FF2A42198C00B2D1CE /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F28FE2A42198C00B2D1CE /* ForecastViewModel.swift */; };
+		CA9F29012A421A6400B2D1CE /* WeatherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F29002A421A6400B2D1CE /* WeatherList.swift */; };
+		CA9F29092A4288E400B2D1CE /* ExpediaCapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F29082A4288E400B2D1CE /* ExpediaCapstoneTests.swift */; };
 		CAC22C682A41C98400CAF717 /* ExpediaCapstoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC22C672A41C98400CAF717 /* ExpediaCapstoneApp.swift */; };
 		CAC22C6A2A41C98400CAF717 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC22C692A41C98400CAF717 /* ContentView.swift */; };
 		CAC22C6C2A41C98500CAF717 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC22C6B2A41C98500CAF717 /* Assets.xcassets */; };
 		CAC22C6F2A41C98500CAF717 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC22C6E2A41C98500CAF717 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CA9F290A2A4288E400B2D1CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAC22C5C2A41C98400CAF717 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAC22C632A41C98400CAF717;
+			remoteInfo = ExpediaCapstone;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		CA9F28E52A41CFE400B2D1CE /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
+		CA9F28F22A41E27F00B2D1CE /* WeatherCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCard.swift; sourceTree = "<group>"; };
+		CA9F28F72A41F03700B2D1CE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		CA9F28F92A4213DF00B2D1CE /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		CA9F28FC2A42171E00B2D1CE /* forecastData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = forecastData.json; sourceTree = "<group>"; };
+		CA9F28FE2A42198C00B2D1CE /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
+		CA9F29002A421A6400B2D1CE /* WeatherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherList.swift; sourceTree = "<group>"; };
+		CA9F29062A4288E400B2D1CE /* ExpediaCapstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpediaCapstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA9F29082A4288E400B2D1CE /* ExpediaCapstoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpediaCapstoneTests.swift; sourceTree = "<group>"; };
 		CAC22C642A41C98400CAF717 /* ExpediaCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpediaCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC22C672A41C98400CAF717 /* ExpediaCapstoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpediaCapstoneApp.swift; sourceTree = "<group>"; };
 		CAC22C692A41C98400CAF717 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -22,6 +49,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CA9F29032A4288E400B2D1CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CAC22C612A41C98400CAF717 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -32,10 +66,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA9F28E72A41D74700B2D1CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CA9F28E52A41CFE400B2D1CE /* HouseView.swift */,
+				CAC22C692A41C98400CAF717 /* ContentView.swift */,
+				CA9F28F22A41E27F00B2D1CE /* WeatherCard.swift */,
+				CA9F29002A421A6400B2D1CE /* WeatherList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CA9F28EE2A41DF2A00B2D1CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA9F28F92A4213DF00B2D1CE /* Forecast.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA9F28EF2A41DF3700B2D1CE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CA9F28FE2A42198C00B2D1CE /* ForecastViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CA9F28F62A41F01A00B2D1CE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CA9F28F72A41F03700B2D1CE /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CA9F28FB2A42147500B2D1CE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA9F28FC2A42171E00B2D1CE /* forecastData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CA9F29072A4288E400B2D1CE /* ExpediaCapstoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA9F29082A4288E400B2D1CE /* ExpediaCapstoneTests.swift */,
+			);
+			path = ExpediaCapstoneTests;
+			sourceTree = "<group>";
+		};
 		CAC22C5B2A41C98400CAF717 = {
 			isa = PBXGroup;
 			children = (
 				CAC22C662A41C98400CAF717 /* ExpediaCapstone */,
+				CA9F29072A4288E400B2D1CE /* ExpediaCapstoneTests */,
 				CAC22C652A41C98400CAF717 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				CAC22C642A41C98400CAF717 /* ExpediaCapstone.app */,
+				CA9F29062A4288E400B2D1CE /* ExpediaCapstoneTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,8 +138,12 @@
 		CAC22C662A41C98400CAF717 /* ExpediaCapstone */ = {
 			isa = PBXGroup;
 			children = (
+				CA9F28FB2A42147500B2D1CE /* Resources */,
+				CA9F28F62A41F01A00B2D1CE /* Utils */,
+				CA9F28EE2A41DF2A00B2D1CE /* Model */,
+				CA9F28EF2A41DF3700B2D1CE /* ViewModel */,
+				CA9F28E72A41D74700B2D1CE /* Views */,
 				CAC22C672A41C98400CAF717 /* ExpediaCapstoneApp.swift */,
-				CAC22C692A41C98400CAF717 /* ContentView.swift */,
 				CAC22C6B2A41C98500CAF717 /* Assets.xcassets */,
 				CAC22C6D2A41C98500CAF717 /* Preview Content */,
 			);
@@ -70,6 +161,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CA9F29052A4288E400B2D1CE /* ExpediaCapstoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA9F290C2A4288E400B2D1CE /* Build configuration list for PBXNativeTarget "ExpediaCapstoneTests" */;
+			buildPhases = (
+				CA9F29022A4288E400B2D1CE /* Sources */,
+				CA9F29032A4288E400B2D1CE /* Frameworks */,
+				CA9F29042A4288E400B2D1CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA9F290B2A4288E400B2D1CE /* PBXTargetDependency */,
+			);
+			name = ExpediaCapstoneTests;
+			productName = ExpediaCapstoneTests;
+			productReference = CA9F29062A4288E400B2D1CE /* ExpediaCapstoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CAC22C632A41C98400CAF717 /* ExpediaCapstone */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAC22C722A41C98500CAF717 /* Build configuration list for PBXNativeTarget "ExpediaCapstone" */;
@@ -97,6 +206,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					CA9F29052A4288E400B2D1CE = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = CAC22C632A41C98400CAF717;
+					};
 					CAC22C632A41C98400CAF717 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -116,16 +229,25 @@
 			projectRoot = "";
 			targets = (
 				CAC22C632A41C98400CAF717 /* ExpediaCapstone */,
+				CA9F29052A4288E400B2D1CE /* ExpediaCapstoneTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CA9F29042A4288E400B2D1CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CAC22C622A41C98400CAF717 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CAC22C6F2A41C98500CAF717 /* Preview Assets.xcassets in Resources */,
+				CA9F28FD2A42171E00B2D1CE /* forecastData.json in Resources */,
 				CAC22C6C2A41C98500CAF717 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,18 +255,82 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CA9F29022A4288E400B2D1CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA9F29092A4288E400B2D1CE /* ExpediaCapstoneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CAC22C602A41C98400CAF717 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA9F29012A421A6400B2D1CE /* WeatherList.swift in Sources */,
+				CA9F28F82A41F03700B2D1CE /* Utils.swift in Sources */,
+				CA9F28E62A41CFE400B2D1CE /* HouseView.swift in Sources */,
 				CAC22C6A2A41C98400CAF717 /* ContentView.swift in Sources */,
+				CA9F28FF2A42198C00B2D1CE /* ForecastViewModel.swift in Sources */,
+				CA9F28F32A41E27F00B2D1CE /* WeatherCard.swift in Sources */,
+				CA9F28FA2A4213DF00B2D1CE /* Forecast.swift in Sources */,
 				CAC22C682A41C98400CAF717 /* ExpediaCapstoneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CA9F290B2A4288E400B2D1CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAC22C632A41C98400CAF717 /* ExpediaCapstone */;
+			targetProxy = CA9F290A2A4288E400B2D1CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		CA9F290D2A4288E400B2D1CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhegde.ExpediaCapstoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpediaCapstone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ExpediaCapstone";
+			};
+			name = Debug;
+		};
+		CA9F290E2A4288E400B2D1CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhegde.ExpediaCapstoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpediaCapstone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ExpediaCapstone";
+			};
+			name = Release;
+		};
 		CAC22C702A41C98500CAF717 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -318,6 +504,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CA9F290C2A4288E400B2D1CE /* Build configuration list for PBXNativeTarget "ExpediaCapstoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA9F290D2A4288E400B2D1CE /* Debug */,
+				CA9F290E2A4288E400B2D1CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CAC22C5F2A41C98400CAF717 /* Build configuration list for PBXProject "ExpediaCapstone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

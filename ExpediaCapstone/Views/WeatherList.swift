@@ -11,6 +11,8 @@ struct WeatherList: View {
     @ObservedObject var forecastViewModel: ForecastViewModel
     @State private var searchText = ""
     @State var editMode: EditMode = .inactive
+    @State var selection = Set<Int>()
+    @State private var delDisabled: Bool = false
     //@State var isEditing = false
     
     var searchResults : [Forecast] {
@@ -20,7 +22,7 @@ struct WeatherList: View {
     var body: some View {
         
         NavigationStack {
-            List {
+            List(selection: $selection) {
                 ForEach(searchResults) { forecast in
                     NavigationLink(
                         destination: HouseView(forecast: forecast)
@@ -37,6 +39,8 @@ struct WeatherList: View {
                     
                 }
                 .onDelete(perform: deleteForecasts)
+                .deleteDisabled(delDisabled)
+                
             }
             .background{
                 BackgroundView()
@@ -47,26 +51,38 @@ struct WeatherList: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("Weather").font(.system(size: 26, weight: .regular, design: .default))
                         .foregroundColor(.white)
-                    
+                    //
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Menu {
-                        Button("Delete"){
-                            editMode = .active
-                        }
-                        Button("Refresh"){
-                            withAnimation{
-                                forecastViewModel.refresh()
-                            }
-                        }
-                        
-                    } label: {
+                    HStack {
                         Button(action: {
-                            
+                            delDisabled = true
+                            editMode = .active
                         }, label: {
-                            Image(systemName: "ellipsis.circle")
+                            Image(systemName: "checkmark.circle")
                                 .foregroundColor(.white)
                         })
+                        Menu {
+                            Button("Delete"){
+                                withAnimation{
+                                    deleteForecasts()
+                                    editMode = .inactive
+                                }
+                            }
+                            Button("Refresh"){
+                                withAnimation{
+                                    forecastViewModel.refresh()
+                                    editMode = .inactive
+                                }
+                            }
+                            
+                        } label: {
+                            Button(action: {
+                            }, label: {
+                                Image(systemName: "ellipsis.circle")
+                                    .foregroundColor(.white)
+                            })
+                        }
                     }
                     
                 }
@@ -78,8 +94,16 @@ struct WeatherList: View {
         
         
     }
+    private func deleteForecasts() {
+        for id in selection {
+            if let index = forecastViewModel.forecasts.lastIndex(where: { $0.id == id }) {
+                forecastViewModel.forecasts.remove(at: index)
+            }
+        }
+        selection = Set<Int>()
+    }
     
-    func deleteForecasts(offsets: IndexSet) {
+    private func deleteForecasts(offsets: IndexSet) {
         withAnimation {
             forecastViewModel.forecasts.remove(atOffsets: offsets)
             editMode = .inactive
