@@ -50,25 +50,25 @@ struct WeatherList: View {
                     
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack {
-                        if editMode == .active{
-                            Button(action:{
-                                withAnimation{
-                                    forecastViewModel.refresh()
-                                }
-                            }, label:{
-                                Image(systemName: "arrow.clockwise.circle")
-                            }).foregroundColor(.white)
+                    Menu {
+                        Button("Delete"){
+                            editMode = .active
+                        }
+                        Button("Refresh"){
+                            withAnimation{
+                                forecastViewModel.refresh()
+                            }
                         }
                         
+                    } label: {
                         Button(action: {
-                            //isEditing.toggle()
-                            editMode = (editMode == .inactive) ? .active : .inactive
+                            
                         }, label: {
                             Image(systemName: "ellipsis.circle")
                                 .foregroundColor(.white)
                         })
                     }
+                    
                 }
             }
         }
@@ -82,6 +82,7 @@ struct WeatherList: View {
     func deleteForecasts(offsets: IndexSet) {
         withAnimation {
             forecastViewModel.forecasts.remove(atOffsets: offsets)
+            editMode = .inactive
         }
     }
 }
