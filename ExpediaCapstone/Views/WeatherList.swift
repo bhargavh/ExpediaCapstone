@@ -9,20 +9,13 @@ import SwiftUI
 
 struct WeatherList: View {
     @ObservedObject var forecastsViewModel: ForecastsViewModel
-    @State private var searchText = ""
-    @State var editMode: EditMode = .inactive
-    @State private var delDisabled: Bool = false
-    //@State var isEditing = false
-    
-    var searchResults : [Forecast] {
-        return forecastsViewModel.search(searchText)
-    }
+    @State private var editMode: EditMode = .inactive
     
     var body: some View {
         
         NavigationStack {
             List(selection: $forecastsViewModel.selection) {
-                ForEach(searchResults) { forecast in
+                ForEach(forecastsViewModel.searchResults) { forecast in
                     NavigationLink(
                         destination: HouseView(weatherViewModel: WeatherViewModel(forecast : forecast))
                             .navigationBarHidden(false)
@@ -35,17 +28,15 @@ struct WeatherList: View {
                         }
                     ).listRowSeparator(.hidden)
                         .listRowBackground(Color.clear)
+                        
                     
                 }
                 .onDelete(perform: {
                     (offset) in
                     withAnimation {
                         forecastsViewModel.deleteSingle(offset)
-                        editMode = .inactive
                     }
                 })
-                .deleteDisabled(delDisabled)
-                
             }
             .background{
                 BackgroundView()
@@ -56,12 +47,12 @@ struct WeatherList: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("Weather").font(.system(size: 26, weight: .regular, design: .default))
                         .foregroundColor(.white)
-                    //
+                    
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack {
                         Button(action: {
-                            delDisabled.toggle()
+                            forecastsViewModel.selection = []
                             editMode = editMode == .active ? .inactive : .active
                         }, label: {
                             Image(systemName: "checkmark.circle")
@@ -72,14 +63,12 @@ struct WeatherList: View {
                                 withAnimation{
                                     forecastsViewModel.deleteMultiple()
                                     editMode = .inactive
-                                    delDisabled = false
                                 }
                             }
                             Button("Refresh"){
                                 withAnimation{
                                     forecastsViewModel.refresh()
                                     editMode = .inactive
-                                    delDisabled = false
                                 }
                             }
                             
@@ -95,10 +84,9 @@ struct WeatherList: View {
                 }
             }
         }
-        .searchable(text: $searchText , prompt: "search for a city or country")
+        .searchable(text: $forecastsViewModel.searchText , prompt: "search for a city or country")
         
     }
-
 }
 
 struct BackgroundView : View {

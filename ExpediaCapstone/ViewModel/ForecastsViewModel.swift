@@ -11,8 +11,13 @@ import Combine
 final class ForecastsViewModel: ObservableObject {
     @Published var forecasts: [Forecast] = load("forecastData.json")
     @Published var selection = Set<Int>()
+    @Published var searchText = ""
     
-    func search(_ query: String) -> [Forecast] {
+    var searchResults : [Forecast] {
+        return search(searchText)
+    }
+    
+    private func search(_ query: String) -> [Forecast] {
         let lquery = query.lowercased()
         return forecasts.filter  { forecast in
             if  query=="" || forecast.city.lowercased().contains(lquery) || forecast.country.lowercased().contains(lquery){
@@ -36,6 +41,7 @@ final class ForecastsViewModel: ObservableObject {
     }
     
     func refresh() {
+        selection = Set<Int>()
         forecasts = load("forecastData.json")
     }
 }

@@ -12,6 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         WeatherList(forecastsViewModel: forecastsViewModel).preferredColorScheme(.dark)
+        
     }
 }
 

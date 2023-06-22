@@ -21,7 +21,8 @@ class ForecastViewModelTests: XCTestCase {
     
     func testPartialSearch(){
         // Test searching by city
-        guard let cityResults = viewModel?.search("Mumb") else {
+        viewModel?.searchText = "Mumb"
+        guard let cityResults = viewModel?.searchResults else{
             XCTFail()
             return
         }
@@ -32,7 +33,8 @@ class ForecastViewModelTests: XCTestCase {
     
     func testEmptySearch(){
         // Test searching with empty query
-        guard let emptyResults = viewModel?.search("") else{
+        viewModel?.searchText = ""
+        guard let emptyResults = viewModel?.searchResults else{
             XCTFail()
             return
         }
@@ -41,7 +43,8 @@ class ForecastViewModelTests: XCTestCase {
     
     func testSearch() {
         // Test searching by country
-        guard let countryResults = viewModel?.search("India") else{
+        viewModel?.searchText = "India"
+        guard let countryResults = viewModel?.searchResults else{
             XCTFail()
             return
         }
