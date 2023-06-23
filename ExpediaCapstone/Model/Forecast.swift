@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Forecast: Decodable, Identifiable {
+struct Forecast: Decodable, Identifiable, Equatable {
     let id: Int
     let temperature: Int
     let high: Int
