@@ -11,7 +11,7 @@ import SwiftUI
 struct ExpediaCapstoneApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(forecastsViewModel: ForecastsViewModel())
+            WeatherList(forecastsViewModel: ForecastsViewModel()).preferredColorScheme(.dark)
         }
     }
 }
