@@ -13,7 +13,7 @@ struct WeatherCard: View {
     var body: some View {
         HStack {
             ZStack(alignment: .leading){
-                Image(Constants.WEATHER_CARD_BACKGROUND)
+                Image(Constants.weatherCardBackground)
                 
                 HStack{
                     VStack(alignment : .leading){

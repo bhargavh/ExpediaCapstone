@@ -12,7 +12,7 @@ struct HouseView: View {
     
     var body: some View {
         ZStack(alignment: .top){
-            Image(Constants.HOUSE_VIEW_BACKGROUND)
+            Image(Constants.houseViewBackground)
                 .resizable()
                 .edgesIgnoringSafeArea(.all)
             
@@ -36,7 +36,7 @@ struct HouseView: View {
                     .font(.title3)
                     .bold()
                     
-                Image(Constants.HOUSE_IMAGE)
+                Image(Constants.houseImage)
                 
             }
             .padding(.vertical , 35)

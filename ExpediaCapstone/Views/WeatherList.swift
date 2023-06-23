@@ -28,7 +28,6 @@ struct WeatherList: View {
                         }
                     ).listRowSeparator(.hidden)
                         .listRowBackground(Color.clear)
-                        //.deleteDisabled(editMode == .active)
                     
                 }
                 .onDelete(perform: {
@@ -55,17 +54,17 @@ struct WeatherList: View {
                             forecastsViewModel.selection = []
                             editMode = editMode == .active ? .inactive : .active
                         }, label: {
-                            Image(systemName: "checkmark.circle")
+                            Image(systemName: Constants.checkmarkCircle)
                                 .foregroundColor(.white)
                         })
                         Menu {
-                            Button("Delete"){
+                            Button(forecastsViewModel.menu_delete_text){
                                 withAnimation{
                                     forecastsViewModel.deleteMultiple()
                                     editMode = .inactive
                                 }
                             }
-                            Button("Refresh"){
+                            Button(forecastsViewModel.menu_refresh_text){
                                 withAnimation{
                                     forecastsViewModel.refresh()
                                     editMode = .inactive
@@ -75,7 +74,7 @@ struct WeatherList: View {
                         } label: {
                             Button(action: {
                             }, label: {
-                                Image(systemName: "ellipsis.circle")
+                                Image(systemName: Constants.ellipsisCircle)
                                     .foregroundColor(.white)
                             })
                         }
@@ -94,8 +93,8 @@ struct BackgroundView : View {
         LinearGradient(
             gradient: Gradient(
                 stops: [
-                    Gradient.Stop(color: Color("GradientColor1"), location: 0.0268),
-                    Gradient.Stop(color: Color("GradientColor2"), location: 0.9898)
+                    Gradient.Stop(color: Color(Constants.gradientColor1), location: 0.0268),
+                    Gradient.Stop(color: Color(Constants.gradientColor2), location: 0.9898)
                 ]
             ),
             startPoint: .topLeading,

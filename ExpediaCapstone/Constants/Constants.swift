@@ -8,7 +8,11 @@
 import Foundation
 
 struct Constants{
-    static let WEATHER_CARD_BACKGROUND = "Trapezium"
-    static let HOUSE_VIEW_BACKGROUND = "NightSky"
-    static let HOUSE_IMAGE = "House"
+    static let weatherCardBackground = "Trapezium"
+    static let houseViewBackground = "NightSky"
+    static let houseImage = "House"
+    static let gradientColor1 = "GradientColor1"
+    static let gradientColor2 = "GradientColor2"
+    static let ellipsisCircle = "ellipsis.circle"
+    static let checkmarkCircle = "checkmark.circle"
 }

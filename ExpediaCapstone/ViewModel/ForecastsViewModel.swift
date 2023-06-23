@@ -12,6 +12,8 @@ final class ForecastsViewModel: ObservableObject {
     
     let title = "Weather"
     let searchPrompt = "search for a city or country"
+    let menu_delete_text = "Delete"
+    let menu_refresh_text = "Refresh"
     
     var forecasts: [Forecast] = Helper.load("forecastData.json")
     @Published var selection = Set<Int>()

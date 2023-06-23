@@ -41,7 +41,7 @@ final class WeatherViewModel : ObservableObject {
             return self.rawValue
         }
         
-        static func from(weatherCondition: String) -> WeatherImage {
+        static func getWeatherImageEnum(weatherCondition: String) -> WeatherImage {
             switch weatherCondition {
             case "Mid Rain":
                 return .midRain
@@ -58,6 +58,6 @@ final class WeatherViewModel : ObservableObject {
     }
     
     func getWeatherImage() -> String {
-        return WeatherImage.from(weatherCondition: weatherCondition).imageName
+        return WeatherImage.getWeatherImageEnum(weatherCondition: weatherCondition).imageName
     }
 }
