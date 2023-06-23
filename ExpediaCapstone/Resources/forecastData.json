@@ -1,0 +1,236 @@
+[
+  {
+    "id": 1,
+    "temperature": 28,
+    "high": 33,
+    "low": 23,
+    "city": "New York",
+    "country": "USA",
+    "weatherCondition": "Mid Rain"
+  },
+  {
+    "id": 2,
+    "temperature": 14,
+    "high": 18,
+    "low": 9,
+    "city": "Paris",
+    "country": "France",
+    "weatherCondition": "Showers"
+  },
+  {
+    "id": 3,
+    "temperature": 23,
+    "high": 28,
+    "low": 18,
+    "city": "Tokyo",
+    "country": "Japan",
+    "weatherCondition": "Fast Wind"
+  },
+  {
+    "id": 4,
+    "temperature": 19,
+    "high": 23,
+    "low": 15,
+    "city": "London",
+    "country": "UK",
+    "weatherCondition": "Mid Rain"
+  },
+  {
+    "id": 5,
+    "temperature": 10,
+    "high": 15,
+    "low": 5,
+    "city": "Sydney",
+    "country": "Australia",
+    "weatherCondition": "Tornado"
+  },
+  {
+    "id": 6,
+    "temperature": 20,
+    "high": 25,
+    "low": 15,
+    "city": "Los Angeles",
+    "country": "USA",
+    "weatherCondition": "Showers"
+  },
+  {
+    "id": 7,
+    "temperature": 12,
+    "high": 16,
+    "low": 8,
+    "city": "Berlin",
+    "country": "Germany",
+    "weatherCondition": "Mid Rain"
+  },
+  {
+    "id": 8,
+    "temperature": 40,
+    "high": 41,
+    "low": 33,
+    "city": "Gurgaon",
+    "country": "India",
+    "weatherCondition": "Showers"
+  },
+  {
+    "id": 9,
+    "temperature": 16,
+    "high": 20,
+    "low": 12,
+    "city": "Toronto",
+    "country": "Canada",
+    "weatherCondition": "Showers"
+  },
+  {
+    "id": 10,
+    "temperature": 8,
+    "high": 13,
+    "low": 3,
+    "city": "Moscow",
+    "country": "Russia",
+    "weatherCondition": "Tornado"
+  },
+  {
+    "id": 11,
+    "temperature": 25,
+    "high": 30,
+    "low": 20,
+    "city": "Rio de Janeiro",
+    "country": "Brazil",
+    "weatherCondition": "Mid Rain"
+  },
+  {
+    "id": 12,
+    "temperature": 18,
+    "high": 22,
+    "low": 14,
+    "city": "Barcelona",
+    "country": "Spain",
+    "weatherCondition": "Showers"
+  },
+  {
+    "id": 13,
+    "temperature": 22,
+    "high": 27,
+    "low": 17,
+    "city": "Seoul",
+    "country": "South Korea",
+    "weatherCondition": "Fast Wind"
+  },
+  {
+    "id": 14,
+    "temperature": 13,
+    "high": 17,
+    "low": 7,
+    "city": "Dublin",
+    "country": "Ireland",
+    "weatherCondition": "Mid Rain"
+  },
+  {
+    "id": 15,
+    "temperature": 6,
+    "high": 11,
+    "low": 1,
+    "city": "Stockholm",
+    "country": "Sweden",
+    "weatherCondition": "Tornado"
+  },
+  {
+    "id": 16,
+    "temperature": 30,
+    "high": 35,
+    "low": 25,
+    "city": "Cairo",
+    "country": "Egypt",
+    "weatherCondition": "Showers"
+  },
+  {
+    "id": 17,
+    "temperature": 17,
+    "high": 21,
+    "low": 11,
+    "city": "Edinburgh",
+    "country": "UK",
+    "weatherCondition": "Mid Rain"
+  },
+  {
+    "id": 18,
+    "temperature": 26,
+    "high": 31,
+    "low": 21,
+    "city": "Shanghai",
+    "country": "China",
+    "weatherCondition": "Fast Wind"
+  },
+  {
+    "id": 19,
+    "temperature": 15,
+    "high": 19,
+    "low": 9,
+    "city": "Montreal",
+    "country": "Canada",
+    "weatherCondition": "Showers"
+  },
+  {
+    "id": 20,
+    "temperature": 9,
+    "high": 14,
+    "low": 4,
+    "city": "Oslo",
+    "country": "Norway",
+    "weatherCondition": "Tornado"
+  },
+  {
+    "id": 21,
+    "temperature": 32,
+    "high": 37,
+    "low": 27,
+    "city": "Miami",
+    "country": "USA",
+    "weatherCondition": "Showers"
+  },
+  {
+    "id": 22,
+    "temperature": 16,
+    "high": 21,
+    "low": 11,
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "weatherCondition": "Mid Rain"
+  },
+  {
+    "id": 23,
+    "temperature": 28,
+    "high": 33,
+    "low": 23,
+    "city": "Dubai",
+    "country": "UAE",
+    "weatherCondition": "Fast Wind"
+  },
+  {
+    "id": 24,
+    "temperature": 20,
+    "high": 25,
+    "low": 15,
+    "city": "Vancouver",
+    "country": "Canada",
+    "weatherCondition": "Showers"
+  },
+  {
+    "id": 25,
+    "temperature": 22,
+    "high": 27,
+    "low": 17,
+    "city": "Mumbai",
+    "country": "India",
+    "weatherCondition": "Mid Rain"
+  },
+  {
+    "id": 26,
+    "temperature": 30,
+    "high": 35,
+    "low": 25,
+    "city": "Bangkok",
+    "country": "Thailand",
+    "weatherCondition": "Fast Wind"
+  }
+]
