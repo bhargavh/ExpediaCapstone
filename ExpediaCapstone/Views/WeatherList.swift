@@ -28,7 +28,7 @@ struct WeatherList: View {
                         }
                     ).listRowSeparator(.hidden)
                         .listRowBackground(Color.clear)
-                        
+                        //.deleteDisabled(editMode == .active)
                     
                 }
                 .onDelete(perform: {
@@ -45,7 +45,7 @@ struct WeatherList: View {
             .listStyle(PlainListStyle())
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Text("Weather").font(.system(size: 26, weight: .regular, design: .default))
+                    Text(forecastsViewModel.title).font(.system(size: 26, weight: .regular, design: .default))
                         .foregroundColor(.white)
                     
                 }
@@ -84,7 +84,7 @@ struct WeatherList: View {
                 }
             }
         }
-        .searchable(text: $forecastsViewModel.searchText , prompt: "search for a city or country")
+        .searchable(text: $forecastsViewModel.searchText , prompt: forecastsViewModel.searchPrompt)
         
     }
 }

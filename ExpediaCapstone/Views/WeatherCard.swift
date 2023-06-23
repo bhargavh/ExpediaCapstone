@@ -13,17 +13,17 @@ struct WeatherCard: View {
     var body: some View {
         HStack {
             ZStack(alignment: .leading){
-                Image("Trapezium")
+                Image(Constants.WEATHER_CARD_BACKGROUND)
                 
                 HStack{
                     VStack(alignment : .leading){
-                        Text("\(weatherViewModel.temperature)°").font(.system(size: 72, weight: .regular, design: .default))
+                        Text(weatherViewModel.formattedTemperature).font(.system(size: 72, weight: .regular, design: .default))
                             .foregroundColor(.white)
-                        Text("H:\(weatherViewModel.high)° L:\(weatherViewModel.low)°").foregroundColor(.white)
+                        Text(weatherViewModel.formattedHiLo).foregroundColor(.white)
                             .opacity(0.50)
                             .padding(.bottom , 1)
                         
-                        Text("\(weatherViewModel.city), \(weatherViewModel.country)")
+                        Text(weatherViewModel.location)
                             .foregroundColor(.white)
                     }.padding(.horizontal , 15)
                     VStack(alignment: .trailing , spacing: 0){

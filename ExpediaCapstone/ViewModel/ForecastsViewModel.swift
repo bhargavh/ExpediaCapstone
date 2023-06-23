@@ -9,7 +9,11 @@ import Foundation
 import Combine
 
 final class ForecastsViewModel: ObservableObject {
-    @Published var forecasts: [Forecast] = load("forecastData.json")
+    
+    let title = "Weather"
+    let searchPrompt = "search for a city or country"
+    
+    var forecasts: [Forecast] = load("forecastData.json")
     @Published var selection = Set<Int>()
     @Published var searchText = ""
     

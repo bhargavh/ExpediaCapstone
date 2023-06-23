@@ -9,37 +9,55 @@ import Foundation
 import Combine
 
 final class WeatherViewModel : ObservableObject {
-    private(set) var id:Int
-    private(set) var temperature: Int
-    private(set) var weatherCondition: String
-    private(set) var high: Int
-    private(set) var low: Int
-    private(set) var city: String
-    private(set) var country: String
-    
-    init(forecast : Forecast){
-        id = forecast.id
-        temperature = forecast.temperature
-        weatherCondition = forecast.weatherCondition
-        high = forecast.high
-        low = forecast.low
-        city = forecast.city
-        country = forecast.country
+    var weatherCondition: String{
+        forecast.weatherCondition
     }
-    func getWeatherImage() -> String {
-        switch weatherCondition{
-        case "Mid Rain":
-            return "Rainy"
-        case "Fast Wind":
-            return "FastWind"
-        case "Showers":
-            return "AngledRain"
-        case "Tornado":
-            return "Tornado"
-        default:
-            fatalError("Unexpected value: \(weatherCondition)")
+    var formattedTemperature: String{
+        return "\(forecast.temperature)°"
+    }
+    var formattedHiLo: String {
+        return "H:\(forecast.high)° L:\(forecast.low)°"
+    }
+    var location: String {
+        return "\(forecast.city), \(forecast.country)"
+    }
+    var city: String {
+        forecast.city
+    }
+
+    
+    private var forecast: Forecast
+    
+    init(forecast f: Forecast){
+        forecast = f
+    }
+    enum WeatherImage: String {
+        case midRain = "Rainy"
+        case fastWind = "FastWind"
+        case showers = "AngledRain"
+        case tornado = "Tornado"
+        
+        var imageName: String {
+            return self.rawValue
+        }
+        
+        static func from(weatherCondition: String) -> WeatherImage {
+            switch weatherCondition {
+            case "Mid Rain":
+                return .midRain
+            case "Fast Wind":
+                return .fastWind
+            case "Showers":
+                return .showers
+            case "Tornado":
+                return .tornado
+            default:
+                fatalError("Unexpected value: \(weatherCondition)")
+            }
         }
     }
     
+    func getWeatherImage() -> String {
+        return WeatherImage.from(weatherCondition: weatherCondition).imageName
+    }
 }
-

@@ -12,7 +12,7 @@ struct HouseView: View {
     
     var body: some View {
         ZStack(alignment: .top){
-            Image("NightSky")
+            Image(Constants.HOUSE_VIEW_BACKGROUND)
                 .resizable()
                 .edgesIgnoringSafeArea(.all)
             
@@ -21,7 +21,7 @@ struct HouseView: View {
                     .font(.system(size: 34, weight: .regular, design: .default))
                     .foregroundColor(.white)
                     
-                Text("\(weatherViewModel.temperature)°")
+                Text(weatherViewModel.formattedTemperature)
                     .font(.system(size: 96, weight: .thin, design: .default))
                     .foregroundColor(.white)
                 
@@ -31,12 +31,12 @@ struct HouseView: View {
                     .bold()
                     .opacity(0.50)
                 
-                Text("H:\(weatherViewModel.high)° L:\(weatherViewModel.low)°")
+                Text(weatherViewModel.formattedHiLo)
                     .foregroundColor(.white)
                     .font(.title3)
                     .bold()
                     
-                Image("House")
+                Image(Constants.HOUSE_IMAGE)
                 
             }
             .padding(.vertical , 35)
