@@ -15,7 +15,7 @@ final class ForecastsViewModel: ObservableObject {
     let menu_delete_text = "Delete"
     let menu_refresh_text = "Refresh"
     
-    private var forecasts: [Forecast] = Helper.load("forecastData.json")
+    var forecasts: [Forecast] = Helper.load("forecastData.json")
     @Published var selection = Set<Int>()
     @Published var searchText = ""
     
