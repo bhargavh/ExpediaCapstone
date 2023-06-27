@@ -10,14 +10,14 @@ import Combine
 
 final class ForecastsViewModel: ObservableObject {
     
-    let title = "Weather"
-    let searchPrompt = "search for a city or country"
-    let menu_delete_text = "Delete"
-    let menu_refresh_text = "Refresh"
+    var forecasts: [Forecast]
     
-    var forecasts: [Forecast] = Helper.load("forecastData.json")
+    init(forecasts: [Forecast]){
+        self.forecasts = forecasts
+    }
+    
     @Published var selection = Set<Int>()
-    @Published var searchText = ""
+    @Published var searchText : String = ""
     
     var searchResults : [Forecast] {
         return search(searchText)
@@ -33,8 +33,9 @@ final class ForecastsViewModel: ObservableObject {
         }
     }
     
-    func deleteSingle(_ offset: IndexSet){
-        forecasts.remove(atOffsets: offset)
+    func deleteSingle(_ offsets: IndexSet) {
+        let validOffsets = IndexSet(offsets.filter { $0 < forecasts.count && $0 >= 0 })
+        forecasts.remove(atOffsets: validOffsets)
     }
     
     func deleteMultiple() {
@@ -48,7 +49,8 @@ final class ForecastsViewModel: ObservableObject {
     
     func refresh() {
         selection = Set<Int>()
-        forecasts = Helper.load("forecastData.json")
+        let helper = Helper("forecastData.json")
+        forecasts = helper.load()
     }
 }
 

@@ -8,93 +8,63 @@
 import SwiftUI
 
 struct WeatherList: View {
-    @ObservedObject var forecastsViewModel: ForecastsViewModel
+    @StateObject var forecastsViewModel: ForecastsViewModel
     @State private var editMode: EditMode = .inactive
+    private let constants = Constants()
     
     var body: some View {
-        
         NavigationStack {
             List(selection: $forecastsViewModel.selection) {
                 ForEach(forecastsViewModel.searchResults) { forecast in
-                    NavigationLink(
-                        destination: HouseView(weatherViewModel: WeatherViewModel(forecast : forecast))
-                            .navigationBarHidden(false)
-                            .navigationBarBackButtonHidden(false)
-                        ,
-                        label: {
-                            WeatherCard(weatherViewModel: WeatherViewModel(forecast : forecast))
-                                .frame(height: 170)
-                            
-                        }
-                    ).listRowSeparator(.hidden)
-                        .listRowBackground(Color.clear)
-                    
+                    let weatherViewModel = WeatherViewModel(forecast: forecast)
+                    WeatherRow(weatherViewModel: weatherViewModel).deleteDisabled(editMode == .active)
                 }
-                .onDelete(perform: {
-                    (offset) in
+                .onDelete(perform: { offsets in
                     withAnimation {
-                        forecastsViewModel.deleteSingle(offset)
+                        forecastsViewModel.deleteSingle(offsets)
                     }
                 })
             }
+            .id(editMode == .active)
+            .environment(\.editMode, $editMode)
+            .listStyle(.plain)
             .background{
                 BackgroundView()
             }
-            .environment(\.editMode, $editMode)
-            .listStyle(PlainListStyle())
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text(forecastsViewModel.title).font(.system(size: 26, weight: .regular, design: .default))
-                        .foregroundColor(.white)
-                    
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack {
-                        Button(action: {
-                            forecastsViewModel.selection = []
-                            editMode = editMode == .active ? .inactive : .active
-                        }, label: {
-                            Image(systemName: Constants.checkmarkCircle)
-                                .foregroundColor(.white)
-                        })
-                        Menu {
-                            Button(forecastsViewModel.menu_delete_text){
-                                withAnimation{
-                                    forecastsViewModel.deleteMultiple()
-                                    editMode = .inactive
-                                }
-                            }
-                            Button(forecastsViewModel.menu_refresh_text){
-                                withAnimation{
-                                    forecastsViewModel.refresh()
-                                    editMode = .inactive
-                                }
-                            }
-                            
-                        } label: {
-                            Button(action: {
-                            }, label: {
-                                Image(systemName: Constants.ellipsisCircle)
-                                    .foregroundColor(.white)
-                            })
-                        }
-                    }
-                    
-                }
+                WeatherToolbar(forecastsViewModel: forecastsViewModel, editMode: $editMode)
             }
         }
-        .searchable(text: $forecastsViewModel.searchText , prompt: forecastsViewModel.searchPrompt)
+        .searchable(text: $forecastsViewModel.searchText , prompt: constants.searchPrompt)
         
     }
 }
 
+struct WeatherToolbar: ToolbarContent{
+    @ObservedObject var forecastsViewModel: ForecastsViewModel
+    @Binding var editMode: EditMode
+    let constants = Constants()
+    
+    var body: some ToolbarContent{
+        ToolbarItem(placement: .navigationBarLeading) {
+            Text(constants.title).font(.system(size: 26, weight: .regular, design: .default))
+                .foregroundColor(.white)
+            
+        }
+        ToolbarItem(placement: .navigationBarTrailing) {
+            WeatherMenu(forecastsViewModel: forecastsViewModel, editMode: $editMode)
+        }
+    }
+}
+
 struct BackgroundView : View {
+    private let constants = Constants()
     var body: some View {
         LinearGradient(
             gradient: Gradient(
                 stops: [
-                    Gradient.Stop(color: Color(Constants.gradientColor1), location: 0.0268),
-                    Gradient.Stop(color: Color(Constants.gradientColor2), location: 0.9898)
+                    Gradient.Stop(color: Color(constants.gradientColor1), location: 0.0268),
+                    Gradient.Stop(color: Color(constants.gradientColor2), location: 0.9898)
                 ]
             ),
             startPoint: .topLeading,
@@ -105,11 +75,74 @@ struct BackgroundView : View {
     }
 }
 
+struct WeatherRow: View{
+    let weatherViewModel: WeatherViewModel
+    var body: some View{
+        WeatherCard(weatherViewModel: weatherViewModel).background{
+            NavigationLink(
+                destination: HouseView(weatherViewModel: weatherViewModel)
+                    .navigationBarHidden(false)
+                    .navigationBarBackButtonHidden(false)
+                ,
+                label: {}
+            )
+            .opacity(0)
+            .buttonStyle(PlainButtonStyle())
+        }.listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+        //.frame(maxHeight: 170)  (No need of this anymore)
+    }
+}
+
+struct WeatherMenu: View {
+    private let constants = Constants()
+    @ObservedObject var forecastsViewModel: ForecastsViewModel
+    @Binding var editMode: EditMode
+    var body: some View {
+        HStack {
+            Button(action: {
+                forecastsViewModel.selection = []
+                editMode = editMode == .active ? .inactive : .active
+            }, label: {
+                Image(systemName: constants.checkmarkCircle)
+                    .foregroundColor(.white)
+            })
+            Menu {
+                Button(constants.menuDeleteText){
+                    withAnimation{
+                        forecastsViewModel.deleteMultiple()
+                        editMode = .inactive
+                    }
+                }
+                Button(constants.menuRefreshText){
+                    withAnimation{
+                        forecastsViewModel.refresh()
+                        editMode = .inactive
+                    }
+                }
+                
+            } label: {
+                Button(action: {
+                }, label: {
+                    Image(systemName: constants.ellipsisCircle)
+                        .foregroundColor(.white)
+                })
+            }
+        }
+    }
+}
+
+
+
+
 
 struct WeatherList_Previews: PreviewProvider {
-    @ObservedObject static var temp: ForecastsViewModel = ForecastsViewModel()
     static var previews: some View {
+        let helper = Helper("forecastData.json")
+        let temp: ForecastsViewModel = ForecastsViewModel(forecasts: helper.load())
         WeatherList(forecastsViewModel: temp).preferredColorScheme(.dark)
         
     }
 }
+
+

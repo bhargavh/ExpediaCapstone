@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct HouseView: View {
-    var weatherViewModel: WeatherViewModel
+    let weatherViewModel: WeatherViewModel
+    private let constants = Constants()
     
     var body: some View {
         ZStack(alignment: .top){
-            Image(Constants.houseViewBackground)
+            Image(constants.houseViewBackground)
                 .resizable()
                 .edgesIgnoringSafeArea(.all)
             
@@ -36,7 +37,7 @@ struct HouseView: View {
                     .font(.title3)
                     .bold()
                     
-                Image(Constants.houseImage)
+                Image(constants.houseImage)
                 
             }
             .padding(.vertical , 35)

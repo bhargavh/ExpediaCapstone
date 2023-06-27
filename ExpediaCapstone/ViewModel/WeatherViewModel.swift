@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import Combine
 
-final class WeatherViewModel : ObservableObject {
+struct WeatherViewModel {
     var weatherCondition: String{
         forecast.weatherCondition
     }
@@ -24,40 +23,39 @@ final class WeatherViewModel : ObservableObject {
     var city: String {
         forecast.city
     }
-
     
-    private var forecast: Forecast
     
-    init(forecast f: Forecast){
-        forecast = f
+    private let forecast: Forecast
+    
+    init(forecast : Forecast){
+        self.forecast = forecast
     }
     enum WeatherImage: String {
         case midRain = "Rainy"
         case fastWind = "FastWind"
         case showers = "AngledRain"
         case tornado = "Tornado"
-        
         var imageName: String {
             return self.rawValue
         }
-        
-        static func getWeatherImageEnum(weatherCondition: String) -> WeatherImage {
-            switch weatherCondition {
-            case "Mid Rain":
-                return .midRain
-            case "Fast Wind":
-                return .fastWind
-            case "Showers":
-                return .showers
-            case "Tornado":
-                return .tornado
-            default:
-                fatalError("Unexpected value: \(weatherCondition)")
-            }
+    }
+    private func getWeatherImageEnum() -> WeatherImage {
+        switch weatherCondition {
+        case "Mid Rain":
+            return .midRain
+        case "Fast Wind":
+            return .fastWind
+        case "Showers":
+            return .showers
+        case "Tornado":
+            return .tornado
+        default:
+            return .tornado
         }
     }
     
     func getWeatherImage() -> String {
-        return WeatherImage.getWeatherImageEnum(weatherCondition: weatherCondition).imageName
+        return getWeatherImageEnum().imageName
     }
+    
 }

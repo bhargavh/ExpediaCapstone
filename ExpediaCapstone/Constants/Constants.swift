@@ -7,12 +7,17 @@
 
 import Foundation
 
-struct Constants{
-    static let weatherCardBackground = "Trapezium"
-    static let houseViewBackground = "NightSky"
-    static let houseImage = "House"
-    static let gradientColor1 = "GradientColor1"
-    static let gradientColor2 = "GradientColor2"
-    static let ellipsisCircle = "ellipsis.circle"
-    static let checkmarkCircle = "checkmark.circle"
+struct Constants {
+    let weatherCardBackground = "Trapezium"
+    let houseViewBackground = "NightSky"
+    let houseImage = "House"
+    let gradientColor1 = "GradientColor1"
+    let gradientColor2 = "GradientColor2"
+    let ellipsisCircle = "ellipsis.circle"
+    let checkmarkCircle = "checkmark.circle"
+    let title = "Weather"
+    let searchPrompt = "search for a city or country"
+    let menuDeleteText = "Delete"
+    let menuRefreshText = "Refresh"
 }
+
