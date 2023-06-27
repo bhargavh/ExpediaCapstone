@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct WeatherCard: View {
-    var weatherViewModel: WeatherViewModel
+    let weatherViewModel: WeatherViewModel
+    private let constants = Constants()
     
     var body: some View {
         HStack {
-            ZStack(alignment: .leading){
-                Image(Constants.weatherCardBackground)
+            ZStack(alignment: .center){
+                Image(constants.weatherCardBackground).resizable()
+                    .aspectRatio(contentMode: .fit)
                 
-                HStack{
+                HStack(alignment:.top){
                     VStack(alignment : .leading){
-                        Text(weatherViewModel.formattedTemperature).font(.system(size: 72, weight: .regular, design: .default))
+                        Text(weatherViewModel.formattedTemperature).font(.system(size: 65, weight: .regular, design: .default))
                             .foregroundColor(.white)
                         Text(weatherViewModel.formattedHiLo).foregroundColor(.white)
                             .opacity(0.50)
@@ -25,15 +27,20 @@ struct WeatherCard: View {
                         
                         Text(weatherViewModel.location)
                             .foregroundColor(.white)
-                    }.padding(.horizontal , 15)
-                    VStack(alignment: .trailing , spacing: 0){
-                        Image(weatherViewModel.getWeatherImage())
-                        Text(weatherViewModel.weatherCondition)
-                            .foregroundColor(.white)
-                            .font(.subheadline)
-                            .padding(.trailing , 20)
                     }
-                    .padding(.bottom , 30)
+                    .padding(.top , 20)
+                    .padding(.leading, 10)
+                    Spacer()
+                    
+                    VStack(alignment: .center , spacing: 0){
+                        Image(weatherViewModel.getWeatherImage())
+                            
+                        Text(weatherViewModel.weatherCondition)
+                           .foregroundColor(.white)
+                           .font(.subheadline)
+                           .padding(.bottom , 20)
+                            
+                    }
                     
                 }
                 
@@ -52,7 +59,7 @@ struct WeatherCard_Previews: PreviewProvider {
         let weatherCondition = "Showers"
         let forecast = Forecast(id: 1, temperature: temperature, high: high, low: low, city: city, country: country, weatherCondition: weatherCondition)
         let weatherViewModel = WeatherViewModel(forecast: forecast)
-        VStack(spacing:0){
+        VStack{
             WeatherCard(weatherViewModel: weatherViewModel)
             WeatherCard(weatherViewModel: weatherViewModel)
         }
