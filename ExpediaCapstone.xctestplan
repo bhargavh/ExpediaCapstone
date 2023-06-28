@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "0B97C534-BF6A-4A2B-9945-851E0A5258F2",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ExpediaCapstone.xcodeproj",
+      "identifier" : "CAC22C632A41C98400CAF717",
+      "name" : "ExpediaCapstone"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ExpediaCapstone.xcodeproj",
+        "identifier" : "CA9F29052A4288E400B2D1CE",
+        "name" : "ExpediaCapstoneTests"
+      }
+    }
+  ],
+  "version" : 1
+}
