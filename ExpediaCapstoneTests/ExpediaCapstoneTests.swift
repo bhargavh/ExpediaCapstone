@@ -13,7 +13,8 @@ class ForecastViewModelTests: XCTestCase {
     var weatherViewModel: WeatherViewModel? = nil
     
     override func setUpWithError() throws {
-        forecastsViewModel = ForecastsViewModel()
+        let helper = Helper("forecastData.json")
+        forecastsViewModel = ForecastsViewModel(forecasts: helper.load())
         let forecast = Forecast(id: 1, temperature: 20, high: 25, low: 15, city: "London", country: "UK", weatherCondition: "Mid Rain")
         weatherViewModel = WeatherViewModel(forecast: forecast)
     }
