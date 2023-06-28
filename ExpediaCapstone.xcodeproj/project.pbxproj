@@ -15,8 +15,9 @@
 		CA9F29012A421A6400B2D1CE /* WeatherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F29002A421A6400B2D1CE /* WeatherList.swift */; };
 		CA9F29092A4288E400B2D1CE /* ExpediaCapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F29082A4288E400B2D1CE /* ExpediaCapstoneTests.swift */; };
 		CA9F29102A42D34D00B2D1CE /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F290F2A42D34D00B2D1CE /* WeatherViewModel.swift */; };
+		CA9F29132A455C7F00B2D1CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F29122A455C7F00B2D1CE /* Constants.swift */; };
+		CA9F29162A456C9900B2D1CE /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F29152A456C9900B2D1CE /* Helper.swift */; };
 		CAC22C682A41C98400CAF717 /* ExpediaCapstoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC22C672A41C98400CAF717 /* ExpediaCapstoneApp.swift */; };
-		CAC22C6A2A41C98400CAF717 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC22C692A41C98400CAF717 /* ContentView.swift */; };
 		CAC22C6C2A41C98500CAF717 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC22C6B2A41C98500CAF717 /* Assets.xcassets */; };
 		CAC22C6F2A41C98500CAF717 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC22C6E2A41C98500CAF717 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA4FB33D2A495E0A003FC904 /* ExpediaCapstone.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExpediaCapstone.xctestplan; sourceTree = "<group>"; };
 		CA9F28E52A41CFE400B2D1CE /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
 		CA9F28F22A41E27F00B2D1CE /* WeatherCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCard.swift; sourceTree = "<group>"; };
 		CA9F28F92A4213DF00B2D1CE /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
@@ -41,9 +43,10 @@
 		CA9F29062A4288E400B2D1CE /* ExpediaCapstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpediaCapstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9F29082A4288E400B2D1CE /* ExpediaCapstoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpediaCapstoneTests.swift; sourceTree = "<group>"; };
 		CA9F290F2A42D34D00B2D1CE /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		CA9F29122A455C7F00B2D1CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CA9F29152A456C9900B2D1CE /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		CAC22C642A41C98400CAF717 /* ExpediaCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpediaCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC22C672A41C98400CAF717 /* ExpediaCapstoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpediaCapstoneApp.swift; sourceTree = "<group>"; };
-		CAC22C692A41C98400CAF717 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CAC22C6B2A41C98500CAF717 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAC22C6E2A41C98500CAF717 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				CA9F28E52A41CFE400B2D1CE /* HouseView.swift */,
-				CAC22C692A41C98400CAF717 /* ContentView.swift */,
 				CA9F28F22A41E27F00B2D1CE /* WeatherCard.swift */,
 				CA9F29002A421A6400B2D1CE /* WeatherList.swift */,
 			);
@@ -110,9 +112,26 @@
 			path = ExpediaCapstoneTests;
 			sourceTree = "<group>";
 		};
+		CA9F29112A455C6400B2D1CE /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CA9F29122A455C7F00B2D1CE /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		CA9F29142A456C8A00B2D1CE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CA9F29152A456C9900B2D1CE /* Helper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		CAC22C5B2A41C98400CAF717 = {
 			isa = PBXGroup;
 			children = (
+				CA4FB33D2A495E0A003FC904 /* ExpediaCapstone.xctestplan */,
 				CAC22C662A41C98400CAF717 /* ExpediaCapstone */,
 				CA9F29072A4288E400B2D1CE /* ExpediaCapstoneTests */,
 				CAC22C652A41C98400CAF717 /* Products */,
@@ -131,6 +150,8 @@
 		CAC22C662A41C98400CAF717 /* ExpediaCapstone */ = {
 			isa = PBXGroup;
 			children = (
+				CA9F29142A456C8A00B2D1CE /* Utilities */,
+				CA9F29112A455C6400B2D1CE /* Constants */,
 				CA9F28FB2A42147500B2D1CE /* Resources */,
 				CA9F28EE2A41DF2A00B2D1CE /* Model */,
 				CA9F28EF2A41DF3700B2D1CE /* ViewModel */,
@@ -261,12 +282,13 @@
 			files = (
 				CA9F29012A421A6400B2D1CE /* WeatherList.swift in Sources */,
 				CA9F28E62A41CFE400B2D1CE /* HouseView.swift in Sources */,
-				CAC22C6A2A41C98400CAF717 /* ContentView.swift in Sources */,
 				CA9F28FF2A42198C00B2D1CE /* ForecastsViewModel.swift in Sources */,
 				CA9F28F32A41E27F00B2D1CE /* WeatherCard.swift in Sources */,
 				CA9F28FA2A4213DF00B2D1CE /* Forecast.swift in Sources */,
+				CA9F29162A456C9900B2D1CE /* Helper.swift in Sources */,
 				CA9F29102A42D34D00B2D1CE /* WeatherViewModel.swift in Sources */,
 				CAC22C682A41C98400CAF717 /* ExpediaCapstoneApp.swift in Sources */,
+				CA9F29132A455C7F00B2D1CE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -427,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -442,9 +464,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ExpediaCapstone/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -452,6 +476,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,9 +484,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bhegde.ExpediaCapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -470,9 +499,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ExpediaCapstone/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -480,6 +511,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,9 +519,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bhegde.ExpediaCapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
