@@ -17,7 +17,12 @@ struct WeatherList: View {
             List(selection: $forecastsViewModel.selection) {
                 ForEach(forecastsViewModel.searchResults) { forecast in
                     let weatherViewModel = WeatherViewModel(forecast: forecast)
-                    WeatherRow(weatherViewModel: weatherViewModel).deleteDisabled(editMode == .active)
+                    if(editMode == .active){
+                        WeatherRow(weatherViewModel: weatherViewModel).deleteDisabled(false)
+                    }
+                    else{
+                        WeatherRow(weatherViewModel: weatherViewModel)
+                    }
                 }
                 .onDelete(perform: { offsets in
                     withAnimation {
@@ -25,7 +30,6 @@ struct WeatherList: View {
                     }
                 })
             }
-            .id(editMode == .active)
             .environment(\.editMode, $editMode)
             .listStyle(.plain)
             .background{
